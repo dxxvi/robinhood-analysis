@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~highcharts/css/highcharts.css";
+@import "~font-awesome/css/font-awesome.css";
+
+input[type="text"].form-control, input[type="number"].form-control {
+  border-top-width: 0; border-left-width: 0; border-right-width: 0; border-radius: 0;
+}

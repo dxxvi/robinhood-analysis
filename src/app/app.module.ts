@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-
+import { AutorunComponent } from './autorun/autorun.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AutorunComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

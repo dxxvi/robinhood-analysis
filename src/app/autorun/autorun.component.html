@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-body">
+    <form #form="ngForm" class="container-fluid" (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <div class="col">sell back</div>
+        <div class="col"><h5>{{ symbol }}</h5></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.d[1]" name="d1" min="0.01" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.d[2]" name="d2" min="0.01" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.d[3]" name="d3" min="0.01" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.d[4]" name="d4" min="0.01" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.d[5]" name="d5" min="0.01" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.d[6]" name="d6" min="0.01" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.d[7]" name="d7" min="0.01" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.d[8]" name="d8" min="0.01" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.d[9]" name="d9" min="0.01" step="0.01"></div>
+        <div class="col" style="text-align: right;">
+          <i class="fa fa-times fa-3x" aria-hidden="true" (click)="close.emit(symbol)" title="close"></i>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col"># of shares</div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[0]" name="s0" min="1" step="1"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[1]" name="s1" min="0" step="1"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[2]" name="s2" min="0" step="1"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[3]" name="s3" min="0" step="1"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[4]" name="s4" min="0" step="1"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[5]" name="s5" min="0" step="1"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[6]" name="s6" min="0" step="1"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[7]" name="s7" min="0" step="1"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[8]" name="s8" min="0" step="1"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.s[9]" name="s9" min="0" step="1"></div>
+        <div class="col">&nbsp;</div>
+      </div>
+      <div class="form-group row">
+        <div class="col">price (in $)</div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[0]" name="p0" max="0" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[1]" name="p1" max="1" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[2]" name="p2" max="2" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[3]" name="p3" max="3" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[4]" name="p4" max="4" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[5]" name="p5" max="5" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[6]" name="p6" max="6" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[7]" name="p7" max="7" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[8]" name="p8" max="8" step="0.01"></div>
+        <div class="col"><input type="number" class="form-control" [(ngModel)]="model.p[9]" name="p9" max="9" step="0.01"></div>
+        <div class="col"><button class="btn" type="submit">Run</button></div>
+      </div>
+    </form>
+  </div>
+</div>
