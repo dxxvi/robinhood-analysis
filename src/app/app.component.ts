@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
 
 import * as Highcharts from 'highcharts';
 import { Gradient } from 'highcharts';
@@ -9,6 +11,7 @@ import { Gradient } from 'highcharts';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  symantec = true;
   symbols: string[] = [];
   model: { newSymbol: string } = { newSymbol: '' };
   alert = false;
@@ -25,8 +28,7 @@ export class AppComponent implements OnInit {
     return 'rgba(255, 255, 255, 0)';
   }
 
-  constructor(private el: ElementRef) {
-  }
+  constructor(private el: ElementRef) { }
 
   ngOnInit(): void {
     const colorIndex = 8;
@@ -59,6 +61,8 @@ export class AppComponent implements OnInit {
         data: []
       }]
     });
+
+    Observable.timer(19482).subscribe(v => this.symantec = false);
   }
 
   drawGraph() {
