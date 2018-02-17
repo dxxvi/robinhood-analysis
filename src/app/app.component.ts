@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   model: { newSymbol: string } = { newSymbol: '' };
   alert = false;
   data: string;
+  jsonData: string;
 
   private chart: any;
 
@@ -31,7 +32,7 @@ export class AppComponent implements OnInit {
   constructor(private el: ElementRef) { }
 
   ngOnInit(): void {
-    const colorIndex = 8;
+    const colorIndex = 7;
     const hc = this.el.nativeElement.querySelector('div.highchart');
     this.chart = Highcharts.chart(hc, {
       chart: { zoomType: 'x' },
@@ -66,6 +67,7 @@ export class AppComponent implements OnInit {
   }
 
   drawGraph() {
+/*
     if (this.data) {
       const lines = this.data.split('\n');
       const chartData = [];
@@ -82,6 +84,13 @@ export class AppComponent implements OnInit {
         }
       });
       this.chart.series[0].setData(chartData);
+    }
+*/
+    if (this.jsonData) {
+      const chartData: Array<Quote> = JSON.parse(this.jsonData);
+      const highchartsData =
+        chartData.map(q => [Date.UTC(q.year, q.month - 1, q.date, q.hour, q.minute, q.second), q.quote]);
+      this.chart.series[0].setData(highchartsData);
     }
   }
 
@@ -105,4 +114,14 @@ export class AppComponent implements OnInit {
       this.symbols.splice(i, 1);
     }
   }
+}
+
+interface Quote {
+  year: number;
+  month: number;
+  date: number;
+  hour: number;
+  minute: number;
+  second: number;
+  quote: number;
 }

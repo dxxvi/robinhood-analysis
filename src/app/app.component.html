@@ -1,13 +1,20 @@
 <div class="highchart"></div>
 <div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      Stock Quotes in this format
-      <pre>yyyy-MM-dd HH:mm:ss 12.3456</pre>
-    </div>
-    <div class="col"><textarea [(ngModel)]="data" name="data" cols="30" rows="5"></textarea></div>
-    <div class="col"><button class="btn btn-success" (click)="drawGraph()">Draw Graph</button></div>
-  </div>
+  <table class="table">
+    <tr>
+<!--
+      <td>Stock Quotes in this format<pre>yyyy-MM-dd HH:mm:ss 12.3456</pre></td>
+      <td><textarea [(ngModel)]="data" name="data" cols="30" rows="5"></textarea></td>
+-->
+      <td>or in json format <pre>[
+  &#123;"minute": 59, "year": 2018, "hour": 15, "quote": 21.58, "second": 52, "date": 7, "month": 2&#125;,
+  &#123;"minute": 59, "year": 2018, "hour": 15, "quote": 21.57, "second": 57, "date": 7, "month": 2&#125;
+]</pre>
+      </td>
+      <td><textarea [(ngModel)]="jsonData" name="jsonData" cols="95" rows="5"></textarea></td>
+      <td><button class="btn btn-success" (click)="drawGraph()">Draw Graph</button></td>
+    </tr>
+  </table>
 </div>
 
 <form #symbolForm="ngForm" class="container-fluid" (ngSubmit)="onSubmit()">
